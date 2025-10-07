@@ -3,26 +3,26 @@ import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateCol
 @Entity()
 export class Product {
   @PrimaryGeneratedColumn()
-  id: number;
-
+  id!: number;
+  
   @Column()
-  name: string;
-
-  @Column({ nullable: true })
-  sku: string;
-
-  @Column('bigint')
-  price: number;
-
-  @Column('bigint', { nullable: true })
-  cost: number;
-
-  @Column('int', { default: 0 })
-  stock: number;
-
+  name!: string;
+  
+  @Column()
+  sku!: string;
+  
+  @Column("decimal")
+  price!: number;
+  
+  @Column("decimal")
+  cost!: number;
+  
+  @Column()
+  stock!: number;
+  
   @CreateDateColumn()
-  created_at: Date;
-
+  created_at!: Date;
+  
   @UpdateDateColumn()
-  updated_at: Date;
+  updated_at!: Date;
 }
